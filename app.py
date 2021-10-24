@@ -44,5 +44,5 @@ def index():
             if timestamp_temp < timestamp_soonest:
                 timestamp_soonest = timestamp_temp
     
-    return str(timestamp_soonest)
+    return str(int(timestamp_soonest))
     
