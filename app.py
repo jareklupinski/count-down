@@ -14,7 +14,7 @@ load_dotenv('.env')
 
 def index():
     calendar_url = os.environ.get('CALENDAR_URL')
-    if len(calendar_url) < 5:
+    if calendar_url is None:
         return "Invalid Calendar URL!"
     
     response = request.urlopen(calendar_url)
