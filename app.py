@@ -1,11 +1,12 @@
 import os
 
-from datetime import datetime
+from datetime import datetime, timedelta
 from dotenv import load_dotenv
 from urllib import request
 
 from flask import Flask
 from icalendar import Calendar
+import recurring_ical_events
 
 app = Flask(__name__)
 load_dotenv('.env')
@@ -33,7 +34,11 @@ def index():
     timestamp_now = datetime.now().timestamp()
     timestamp_soonest = float('inf')
     
+    events = recurring_ical_events.of(cal).between(datetime.now(), datetime.now() + timedelta(days=5))
     for event in cal.walk('vevent'):
+        events.append(event)
+    
+    for event in events:
         try:
             timestamp_temp = event.get('dtstart').dt.timestamp()
         except:
