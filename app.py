@@ -34,7 +34,7 @@ def index():
     timestamp_now = datetime.now().timestamp()
     timestamp_soonest = float('inf')
     
-    events = recurring_ical_events.of(cal).between(datetime.now(), datetime.now() + timedelta(days=5))
+    events = recurring_ical_events.of(cal).between(datetime.now() - timedelta(days=1), datetime.now() + timedelta(days=6))
     for event in cal.walk('vevent'):
         events.append(event)
     
