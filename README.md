@@ -1,7 +1,9 @@
 # count-down
 A clock that counts down until your next meeting
 
-WIP
+![image2](https://user-images.githubusercontent.com/2049284/147765050-3dd7f703-2b5d-4315-a59f-b49a823572f7.jpeg)
+
+(the photo makes the lights look blurrier than they are in real life, the LEDs numbers are very crisp to the human eye)
 
 A Heroku App runs a Python script that downloads your Google Calendar and parses out the next appointment timestamp.
 
